@@ -10,31 +10,18 @@ export default Client.create({
 		}
 	},
 	cache: {
-		// 1 minute
-		places_place: 60 * 30,
-		// 10 minutes
-		places_places: 60 * 10,
-		// 10 minutes
-		news_stories: 60 * 10,
-		// 30 minutes
-		holidays: 60 * 60,
-		// 1 minute
-		weather_report: 60 * 1,
-		// 60 minutes
-		exchange_source: 60 * 60,
-		// 30 minutes
-		exchange_rates: 60 * 30,
-		// no cache
-		places_searchPlace: 0,
-		// 60 minutes
-		places_region: 60 * 60,
-		// 60 minutes
-		places_regions: 60 * 60,
-		// 60 minutes
-		places_placeoldid: 60 * 60,
-		// 10 minutes
-		news_trendTopics: 60 * 10,
-		// 10 minutes
-		news_quotes: 60 * 10
+		places_place: { max: 100, ttl: 1000 * 60 * 10 },
+		places_places: { max: 100, ttl: 1000 * 60 * 10 },
+		news_stories: { max: 100, ttl: 1000 * 60 * 10 },
+		holidays: { max: 10, ttl: 1000 * 60 * 60 },
+		weather_report: { max: 100, ttl: 1000 * 60 * 1 },
+		exchange_source: { max: 100, ttl: 1000 * 60 * 60 },
+		exchange_rates: { max: 200, ttl: 1000 * 60 * 30 },
+		places_searchPlace: false,
+		places_region: { max: 100, ttl: 1000 * 60 * 60 },
+		places_regions: { max: 100, ttl: 1000 * 60 * 60 },
+		places_placeoldid: { max: 200, ttl: 1000 * 60 * 60 },
+		news_trendTopics: { max: 100, ttl: 1000 * 60 * 10 },
+		news_quotes: { max: 100, ttl: 1000 * 60 * 10 }
 	}
 });
