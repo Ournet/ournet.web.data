@@ -1,0 +1,42 @@
+{
+  "name": "ournet.web.data",
+  "version": "0.0.2",
+  "description": "Ournet web data module",
+  "main": "./lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "pretest": "npm run tsc",
+    "test": "mocha",
+    "tsc": "tsc",
+    "tscw": "tsc -w",
+    "preversion": "npm run tsc",
+    "postversion": "git push --follow-tags",
+    "postinstall": "npm run tsc"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ournet/ournet.web.data.git"
+  },
+  "keywords": [
+    "ournet",
+    "web",
+    "data"
+  ],
+  "author": "Dumitru Cantea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ournet/ournet.web.data/issues"
+  },
+  "homepage": "https://github.com/Ournet/ournet.web.data#readme",
+  "dependencies": {
+    "ournet.api.client": "0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5",
+    "mocha": "^3.2.0",
+    "typescript": "^2.1.5"
+  }
+}
