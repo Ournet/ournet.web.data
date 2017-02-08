@@ -3,7 +3,6 @@
 import client from './client';
 import properties from './properties';
 
-// {place:['place',{placeForecast:1002}]}
 export function get(props:any):any {
 	// debug('getting data by props:', props);
 	const data = {};
