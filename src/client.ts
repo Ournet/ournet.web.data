@@ -22,6 +22,10 @@ export default Client.create({
 		places_regions: { max: 100, ttl: 1000 * 60 * 60 },
 		places_placeoldid: { max: 200, ttl: 1000 * 60 * 60 },
 		news_trendTopics: { max: 100, ttl: 1000 * 60 * 10 },
-		news_quotes: { max: 100, ttl: 1000 * 60 * 10 }
+		news_quotes: { max: 100, ttl: 1000 * 60 * 10 },
+
+		horoscope_reports: { max: 100, ttl: 1000 * 60 * 60 },
+		horoscope_report: { max: 100, ttl: 1000 * 60 * 60 },
+		horoscope_signsNames: { max: 100, ttl: 1000 * 60 * 60 }
 	}
 });

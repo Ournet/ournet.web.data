@@ -59,10 +59,6 @@ export default {
 		name: 'places_placeoldid',
 		query: '(id:$id){id geonameid}'
 	},
-	horoscopeSignsNames: {
-		name: 'horoscope_signsNames',
-		query: ''
-	},
 	trendingTopics: {
 		name: 'news_trendTopics',
 		query: '(where:$where,limit:$limit,order:$order){id name slug:uniqueName type abbr counts}'
@@ -74,5 +70,17 @@ export default {
 	newsStories: {
 		name: 'news_stories',
 		query: '(country:$country,lang:$lang,where:$where,limit:$limit,order:$order){id slug:uniqueName summary createdAt countViews countNews imageId videos title countShares}'
+	},
+	horoscopeReport: {
+		name: 'horoscope_report',
+		query: '(id:$id){id period text sign}'
+	},
+	horoscopeReports: {
+		name: 'horoscope_reports',
+		query: '(where:$where,limit:$limit,order:$order){id period text sign}'
+	},
+	horoscopeSignsNames: {
+		name: 'horoscope_signsNames',
+		query: ''
 	}
 };
