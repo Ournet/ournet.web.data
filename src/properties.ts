@@ -1,4 +1,10 @@
-export default {
+const defaultsDeep = require('lodash.defaultsdeep');
+
+export function get(options?: any): any {
+	return defaultsDeep(options || {}, PROPERTIES);
+};
+
+const PROPERTIES = {
 	place: {
 		name: 'places_place',
 		query: '(id:$placeId){id population latitude longitude feature_code feature_class country_code name asciiname alternatenames region{id asciiname country_code admin1_code name alternatenames}}'

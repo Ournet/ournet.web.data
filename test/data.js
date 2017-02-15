@@ -8,4 +8,14 @@ describe('data', function () {
         assert.equal('function', typeof Data.get);
         done();
     });
+
+    it('has .initClient', function (done) {
+        assert.equal('function', typeof Data.initClient);
+        done();
+    });
+
+    it('has .initProperties', function (done) {
+        assert.equal('function', typeof Data.initProperties);
+        done();
+    });
 });
