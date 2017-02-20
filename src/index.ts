@@ -14,7 +14,7 @@ export function initProperties(options?: any): any {
 	return properties = getProperties(options);
 };
 
-export function get(props: any): any {
+export function get(props: any, type: string='query'): any {
 	// debug('getting data by props:', props);
 	const data = {};
 	var propertyKey;
@@ -46,5 +46,13 @@ export function get(props: any): any {
 		initClient();
 	}
 
-	return client.query(data);
+	return client[type](data);
+};
+
+export function query(props: any):any {
+	return get(props, 'query');
+};
+
+export function mutate(props: any):any {
+	return get(props, 'mutate');
 };
