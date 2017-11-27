@@ -7,35 +7,39 @@ export function get(options?: any): any {
 const PROPERTIES = {
 	place: {
 		name: 'places_place',
-		query: '(id:$placeId){id population latitude longitude feature_code feature_class country_code name asciiname alternatenames region{id asciiname country_code admin1_code name alternatenames}}'
+		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1{id asciiname countryCode admin1Code name names}}'
 	},
 	places: {
 		name: 'places_places',
-		query: '(ids:$ids){id latitude longitude country_code name asciiname alternatenames admin1_code}'
+		query: '(ids:$ids){id latitude longitude countryCode name asciiname names admin1Code}'
 	},
-	regionPlaces: {
+	mainPlaces: {
+		name: 'places_mainPlaces',
+		query: '(country:$country,limit:$limit){id latitude longitude countryCode name asciiname names admin1Code}'
+	},
+	admin1Places: {
 		name: 'places_places',
-		query: '(regionKey:$regionKey,limit:$limit){id latitude longitude country_code name asciiname alternatenames admin1_code}'
+		query: '(admin1Key:$admin1Key,limit:$limit){id latitude longitude countryCode name asciiname names admin1Code}'
 	},
 	searchPlace: {
 		name: 'places_searchPlace',
-		query: '(country:$country,query:$query,limit:$limit){id latitude longitude country_code name asciiname alternatenames admin1_code region{id asciiname country_code admin1_code name alternatenames}}'
+		query: '(country:$country,query:$query,limit:$limit){id countryCode name asciiname names admin1Code featureClass featureCode admin1{id asciiname countryCode admin1Code name names}}'
 	},
-	region: {
-		name: 'places_region',
-		query: '(admin1:$admin1,country:$country){id latitude longitude feature_code feature_class country_code name asciiname alternatenames admin1_code}'
+	admin1: {
+		name: 'places_admin1',
+		query: '(admin1:$admin1,country:$country){id latitude longitude featureCode featureClass countryCode name asciiname names admin1Code}'
 	},
-	regions: {
-		name: 'places_regions',
-		query: '(limit:$limit,country:$country){id latitude longitude feature_code feature_class country_code name asciiname alternatenames admin1_code}'
+	admin1s: {
+		name: 'places_admin1s',
+		query: '(limit:$limit,country:$country){id latitude longitude featureCode featureClass countryCode name asciiname names admin1Code}'
 	},
 	placeForecast: {
 		name: 'places_place',
-		query: '(id:$placeId){id population latitude longitude feature_code feature_class country_code name asciiname alternatenames region{id asciiname country_code admin1_code name alternatenames}forecast}'
+		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1{id asciiname countryCode admin1Code name names}forecast}'
 	},
 	placeCurrentForecast: {
 		name: 'places_place',
-		query: '(id:$placeId){id latitude longitude feature_code feature_class country_code name asciiname alternatenames currentForecast}'
+		query: '(id:$placeId){id latitude longitude featureCode featureClass countryCode name asciiname names currentForecast}'
 	},
 	forecast: {
 		name: 'weather_report',

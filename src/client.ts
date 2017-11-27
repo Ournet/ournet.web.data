@@ -13,6 +13,7 @@ const OPTIONS = {
 	cache: {
 		places_place: { max: 100, ttl: 1000 * 60 * 10 },
 		places_places: { max: 100, ttl: 1000 * 60 * 10 },
+		places_mainPlaces: { max: 100, ttl: 1000 * 60 * 60 },
 		holidays: { max: 10, ttl: 1000 * 60 * 60 },
 		weather_report: { max: 100, ttl: 1000 * 60 * 1 },
 		exchange_source: { max: 100, ttl: 1000 * 60 * 60 },
