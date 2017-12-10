@@ -83,11 +83,11 @@ const PROPERTIES = {
 	},
 	horoscopeReport: {
 		name: 'horoscope_report',
-		query: '(id:$id){id period text sign}'
+		query: '(id:$id){id period text sign numbers stats{health love success}}'
 	},
 	horoscopeReports: {
 		name: 'horoscope_reports',
-		query: '(where:$where,limit:$limit,order:$order){id period text sign}'
+		query: '(where:$where,limit:$limit,order:$order){id period text sign numbers stats{health love success}}'
 	},
 	horoscopeSignsNames: {
 		name: 'horoscope_signsNames',
