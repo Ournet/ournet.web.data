@@ -7,7 +7,7 @@ export function get(options?: any): any {
 const PROPERTIES = {
 	place: {
 		name: 'places_place',
-		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1{id asciiname countryCode admin1Code name names}}'
+		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1Code timezone admin1{id asciiname countryCode admin1Code name names}}'
 	},
 	places: {
 		name: 'places_places',
@@ -35,11 +35,11 @@ const PROPERTIES = {
 	},
 	placeForecast: {
 		name: 'places_place',
-		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1{id asciiname countryCode admin1Code name names}forecast}'
+		query: '(id:$placeId){id population latitude longitude featureCode featureClass countryCode name asciiname names admin1Code timezone admin1{id asciiname countryCode admin1Code name names}forecast}'
 	},
 	placeCurrentForecast: {
 		name: 'places_place',
-		query: '(id:$placeId){id latitude longitude featureCode featureClass countryCode name asciiname names currentForecast}'
+		query: '(id:$placeId){id latitude longitude featureCode featureClass countryCode name asciiname names admin1Code timezone currentForecast}'
 	},
 	forecast: {
 		name: 'weather_report',
